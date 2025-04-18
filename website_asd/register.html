@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - All-Star Debate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="auth-main">
+        <section class="auth-section">
+            <div class="auth-container">
+                <h1 class="auth-title">Create Account</h1>
+                <p class="auth-subtitle">Join our community and start your debate journey.</p>
+                
+                <form class="auth-form register-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <small class="password-hint">Password must be at least 8 characters long</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                    
+                    <div class="error-message" style="display: none;"></div>
+                    
+                    <div class="auth-links">
+                        <p>Already have an account? <a href="login.html" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html> 

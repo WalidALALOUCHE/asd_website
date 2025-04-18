@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmation - All-Star Debate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="confirmation-main">
+        <section class="confirmation-section">
+            <div class="confirmation-container">
+                <div class="confirmation-header">
+                    <h1>Reservation Confirmed!</h1>
+                    <p>Thank you for your reservation. Here are your booking details:</p>
+                </div>
+
+                <div class="confirmation-details">
+                    <div class="detail-group">
+                        <h3>Reservation Information</h3>
+                        <div class="detail-item">
+                            <span class="label">Reservation ID:</span>
+                            <span class="value" id="reservation-id">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Seat Number:</span>
+                            <span class="value" id="seat-number">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Date:</span>
+                            <span class="value" id="reservation-date">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-group">
+                        <h3>Personal Information</h3>
+                        <div class="detail-item">
+                            <span class="label">Full Name:</span>
+                            <span class="value" id="full-name">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Email:</span>
+                            <span class="value" id="email">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Phone:</span>
+                            <span class="value" id="phone">Loading...</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-group">
+                        <h3>Payment Information</h3>
+                        <div class="detail-item">
+                            <span class="label">Payment Method:</span>
+                            <span class="value" id="payment-method">Loading...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Payment Status:</span>
+                            <span class="value" id="payment-status">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmation-actions">
+                    <a href="/" class="btn btn-primary">Return to Home</a>
+                    <button class="btn btn-secondary" onclick="window.print()">Print Confirmation</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+</html> 

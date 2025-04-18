@@ -1,0 +1,841 @@
+/* === Reservation Page Overhaul === */
+
+/* Main Layout & Theme */
+.reservation-main {
+    padding: 3rem 1rem; /* Increased padding */
+    min-height: calc(100vh - 80px); /* Ensure it takes full height */
+    background: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text */
+}
+
+.reservation-section {
+    max-width: 1100px; /* Slightly wider */
+    margin: 0 auto;
+    padding: 0; /* Remove padding here, add to inner containers */
+}
+
+.reservation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem; /* Add padding for smaller screens */
+}
+
+.reservation-header h1 {
+    font-size: 2.8rem;
+    color: #FFD700; /* Gold accent */
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.reservation-header p {
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Lighter gray */
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.reservation-subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.reservation-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: #3498db;
+}
+
+.benefit-item i {
+    color: #3498db;
+    font-size: 1.2rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.benefit-item:hover i {
+    color: #2c3e50;
+}
+
+/* --- Amphitheater View --- */
+.amphitheater-container,
+.reservation-steps { /* Style both main containers */
+    background-color: #2a2a2a; /* Slightly lighter dark */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333; /* Subtle border */
+    margin-bottom: 2rem; /* Space between elements */
+}
+
+.amphitheater-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #FFD700;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.amphitheater {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center grid and legend */
+    overflow-x: auto; /* Allow horizontal scrolling for large amphitheater */
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 20px;
+}
+
+.stage {
+    background: linear-gradient(to right, #333, #444); /* Gradient background */
+    color: #FFD700;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 80%; /* Linear stage is wider */
+    max-width: 450px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #555;
+    transform: perspective(500px) rotateX(5deg); /* Slight 3D effect */
+}
+
+.stage i {
+    margin: 0 0.5rem;
+    color: #FFD700;
+    opacity: 0.8;
+}
+
+.seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 760px; /* Minimum width to prevent squishing */
+    padding: 0 20px;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+.row-label {
+    color: #999;
+    font-size: 0.75rem;
+    margin-right: 5px;
+    width: 30px;
+    text-align: center;
+}
+
+.seat-row {
+    display: flex;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+.seats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    padding-top: 20px;
+    perspective: 1000px; /* 3D perspective for amphitheater effect */
+}
+
+.seat {
+    width: 24px;
+    height: 24px;
+    background: #4CAF50; /* Green for available */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-size: 0;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    margin: 2px;
+    position: relative;
+}
+
+/* Show seat number on hover */
+.seat:hover::after {
+    content: attr(data-seat);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.seat:hover {
+    background: #66BB6A; /* Lighter green on hover */
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    z-index: 2;
+}
+
+.seat.selected {
+    background: #FFC107; /* Yellow for selected */
+    color: #333;
+    border-color: #FFD700;
+    box-shadow: 0 0 12px rgba(255, 193, 7, 0.7);
+    transform: scale(1.2);
+    z-index: 3;
+}
+
+.seat.unavailable {
+    background: #F44336; /* Red for unavailable */
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.seat.unavailable:hover { /* Don't highlight unavailable seats */
+    transform: none;
+    box-shadow: none;
+    background: #F44336;
+}
+
+/* Seat sections */
+.section-A .seat { background: #4CAF50; } /* Green */
+.section-B .seat { background: #2196F3; } /* Blue */
+.section-C .seat { background: #9C27B0; } /* Purple */
+.section-VIP .seat { background: #FF9800; } /* Orange */
+
+/* Seat Legend */
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Increased gap */
+    margin: 1.5rem 0;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    padding: 0 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-item .seat { /* Use seat styles for legend squares */
+    width: 20px;
+    height: 20px;
+    font-size: 0; /* Hide number in legend */
+    cursor: default;
+    transform: none !important; /* Prevent hover effects */
+    box-shadow: none !important; /* Prevent hover effects */
+    pointer-events: none; /* Disable clicks */
+}
+
+.legend-item .seat.available { background: #4CAF50; }
+.legend-item .seat.selected { background: #FFC107; }
+.legend-item .seat.unavailable { background: #F44336; opacity: 0.6; }
+.legend-item .seat.section-A { background: #4CAF50; }
+.legend-item .seat.section-B { background: #2196F3; }
+.legend-item .seat.section-C { background: #9C27B0; }
+.legend-item .seat.section-VIP { background: #FF9800; }
+
+.legend-item span {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Section headers */
+.section-divider {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #FFD700;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Selected Seat Display Area */
+#selectedSeatInfo {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #FFD700;
+    min-height: 1.5em; /* Prevent layout shift */
+    font-weight: 500;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+/* Zoom controls */
+.zoom-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.zoom-btn {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.zoom-btn:hover {
+    background: #555;
+}
+
+/* Reserve Now Button */
+.reserve-now-btn {
+    background: linear-gradient(to right, #FFD700, #FFA000);
+    color: #1a1a1a; /* Dark text on gold */
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Make it block */
+    width: fit-content; /* Fit content width */
+    margin: 0 auto; /* Center */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.reserve-now-btn:hover {
+    background: linear-gradient(to right, #ffec80, #FFC107); /* Lighter gold */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+.reserve-now-btn:disabled { /* Style for disabled state */
+    background: #555;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- Reservation Form Steps --- */
+.reservation-steps {
+    /* Shared styles with amphitheater-container applied above */
+    /* display: none; initially handled by inline style or JS */
+}
+
+/* Step Indicator */
+.step-indicator {
+    display: flex;
+    justify-content: space-around; /* Even space */
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 1rem; /* Padding for smaller screens */
+}
+
+.step-indicator::before { /* Connecting line */
+    content: '';
+    position: absolute;
+    top: 25px; /* Center vertically on the number */
+    left: 15%; /* Adjust start/end */
+    right: 15%;
+    height: 3px; /* Thicker line */
+    background: #444; /* Darker gray */
+    z-index: 1;
+}
+
+.step { /* Individual step container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background: #2a2a2a; /* Match step background */
+    padding: 0 0.5rem; /* Prevent line overlap */
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #555; /* Default gray */
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+    transition: all 0.3s ease;
+    border: 2px solid #555; /* Border matches background */
+}
+
+.step.active .step-number {
+    background: #FFD700; /* Gold for active */
+    color: #1a1a1a; /* Dark text */
+    border-color: #ffec80; /* Lighter gold border */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.step-label {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center;
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    color: #FFD700; /* Gold label for active */
+}
+
+/* Form Steps Content */
+.form-step {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Form Grid & Groups */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1.8rem; /* Slightly larger gap */
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    position: relative; /* For potential absolute elements like icons */
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #ccc; /* Light gray label */
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem; /* Consistent padding */
+    background-color: #333; /* Darker input background */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 6px;
+    color: #f0f0f0; /* Light text */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.form-group input[type="file"] {
+    padding: 0.6rem 1rem; /* Adjust file input padding */
+    cursor: pointer;
+}
+.form-group input[type="file"]::-webkit-file-upload-button { /* Style file button */
+    background: #FFD700;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease;
+}
+.form-group input[type="file"]::-webkit-file-upload-button:hover {
+    background: #ffec80;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FFD700; /* Gold focus border */
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2); /* Gold focus glow */
+    background-color: #3a3a3a; /* Slightly lighter on focus */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888; /* Placeholder color */
+}
+
+.form-group input[readonly] { /* Readonly selected seat */
+    background-color: #444;
+    cursor: not-allowed;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+/* Photo Preview */
+.photo-preview {
+    margin-top: 1rem;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #555; /* Dashed border */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.photo-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+/* Login Specific Styles */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.forgot-password,
+.create-account {
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover,
+.create-account:hover {
+    color: #ffec80;
+    text-decoration: underline;
+}
+
+/* Payment Section */
+.payment-section {
+    /* Container style already applied via .reservation-steps */
+}
+
+.payment-info {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.price-tag {
+    font-size: 3rem; /* Larger price */
+    color: #FFD700;
+    margin-bottom: 1.5rem; /* Reduced margin */
+    font-weight: 600;
+}
+
+.price-tag .amount {
+    /* font-weight: bold; applied to parent */
+}
+
+.price-tag .currency {
+    font-size: 1rem;
+    color: #aaa;
+    margin-left: 0.3rem;
+}
+
+.included-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-card {
+    background: #333; /* Darker card background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #444;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border-color: #555;
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #FFD700; /* Gold icon */
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    color: #f0f0f0; /* Light heading */
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.feature-card p {
+    color: #aaa; /* Lighter text */
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Payment Methods Buttons */
+.payment-methods {
+    display: flex;
+    gap: 1.5rem; /* Increased gap */
+    justify-content: center; /* Center buttons */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.payment-btn {
+    flex: 1;
+    min-width: 180px; /* Minimum width */
+    max-width: 250px; /* Max width */
+    padding: 1rem 1.5rem;
+    background: #444; /* Darker button */
+    border: 1px solid #555;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ccc; /* Light text */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    gap: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.payment-btn i {
+    font-size: 1.3rem;
+    color: #FFD700; /* Gold icon */
+}
+
+.payment-btn:hover {
+    background: #555;
+    border-color: #777;
+}
+
+.payment-btn.selected {
+    background: #FFD700; /* Gold selected background */
+    color: #1a1a1a; /* Dark text */
+    border-color: #ffec80;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+.payment-btn.selected i {
+    color: #1a1a1a; /* Dark icon when selected */
+}
+
+
+/* Step Action Buttons (Prev/Next/Submit) */
+.step-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem; /* More space above buttons */
+    padding-top: 1.5rem; /* Space from content */
+    border-top: 1px solid #444; /* Separator line */
+}
+
+/* Base button style */
+.prev-step-btn,
+.next-step-btn,
+.submit-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prev-step-btn {
+    background: #555; /* Gray background */
+    color: #ccc;
+    border: 1px solid #777;
+}
+
+.prev-step-btn:hover {
+    background: #666;
+    border-color: #888;
+}
+
+.next-step-btn,
+.submit-btn {
+    background: #FFD700; /* Gold background */
+    color: #1a1a1a;
+}
+
+.next-step-btn:hover,
+.submit-btn:hover {
+    background: #ffec80; /* Lighter gold */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Loading State for buttons */
+.button-loading {
+    position: relative;
+    color: transparent !important; /* Hide text */
+    pointer-events: none; /* Disable clicks */
+}
+.button-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .seats-container {
+        min-width: 700px;
+    }
+    .seat {
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+    }
+}
+
+@media (max-width: 992px) {
+    .seats-container {
+        transform: scale(0.9);
+        transform-origin: top center;
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 768px) {
+    .amphitheater {
+        overflow-x: auto;
+    }
+    .seats-container {
+        transform: scale(0.8);
+        transform-origin: top center;
+        min-width: 600px;
+    }
+    .reservation-main { padding: 2rem 0.5rem; }
+    .amphitheater-container, .reservation-steps { padding: 1.5rem; }
+    .reservation-header h1 { font-size: 2.2rem; }
+    .reservation-header p { font-size: 1rem; }
+    .stage { width: 70%; font-size: 1rem;}
+    .seats-grid { grid-template-columns: repeat(8, minmax(25px, 40px)); gap: 6px; } /* Adjust columns */
+    .seat { font-size: 0.7rem; }
+    .seat-legend { gap: 1rem; }
+    .legend-item span { font-size: 0.8rem; }
+    .step-indicator { margin-bottom: 2rem; padding: 0 0.5rem;}
+    .step-indicator::before { left: 10%; right: 10%; }
+    .step-number { width: 40px; height: 40px; font-size: 1rem; }
+    .step-label { font-size: 0.8rem; }
+    .form-grid { grid-template-columns: 1fr; gap: 1.5rem; } /* Single column form */
+    .payment-methods { flex-direction: column; align-items: center; gap: 1rem; }
+    .payment-btn { width: 100%; max-width: 300px; }
+    .step-actions { flex-direction: column; gap: 1rem; align-items: stretch;}
+    .prev-step-btn, .next-step-btn, .submit-btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .reservation-main { padding: 1.5rem 0.5rem; }
+    .amphitheater-container, .reservation-steps { padding: 1rem; }
+    .reservation-header h1 { font-size: 1.8rem; }
+    .stage { width: 80%; padding: 0.6rem 1.5rem; }
+    .seats-grid { grid-template-columns: repeat(6, minmax(25px, 35px)); gap: 5px; } /* Fewer columns */
+    .reserve-now-btn, .prev-step-btn, .next-step-btn, .submit-btn { padding: 0.7rem 1.5rem; font-size: 0.9rem;}
+    .price-tag { font-size: 2.5rem; }
+}
+
+/* Seating notes */
+.seating-notes {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seating-notes p {
+    color: #FFD700;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .seating-notes p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .seating-notes p {
+        font-size: 0.85rem;
+    }
+}

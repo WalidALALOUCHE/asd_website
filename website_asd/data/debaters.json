@@ -1,0 +1,69 @@
+{
+    "editions": {
+        "2024": {
+            "english": {
+                "team1": [
+                    {
+                        "name": "Debater 1",
+                        "role": "Team Captain",
+                        "school": "School Name",
+                        "bio": "Brief bio about the debater...",
+                        "image": "images/debaters/2024/english/team1/debater1.jpg",
+                        "achievements": [
+                            "Achievement 1",
+                            "Achievement 2"
+                        ]
+                    },
+                    {
+                        "name": "Debater 2",
+                        "role": "Member",
+                        "school": "School Name",
+                        "bio": "Brief bio about the debater...",
+                        "image": "images/debaters/2024/english/team1/debater2.jpg",
+                        "achievements": [
+                            "Achievement 1",
+                            "Achievement 2"
+                        ]
+                    }
+                ],
+                "team2": []
+            },
+            "french": {
+                "team1": [],
+                "team2": []
+            },
+            "arabic": {
+                "team1": [],
+                "team2": []
+            }
+        },
+        "2023": {
+            "english": {
+                "team1": [],
+                "team2": []
+            },
+            "french": {
+                "team1": [],
+                "team2": []
+            },
+            "arabic": {
+                "team1": [],
+                "team2": []
+            }
+        },
+        "2022": {
+            "english": {
+                "team1": [],
+                "team2": []
+            },
+            "french": {
+                "team1": [],
+                "team2": []
+            },
+            "arabic": {
+                "team1": [],
+                "team2": []
+            }
+        }
+    }
+} 

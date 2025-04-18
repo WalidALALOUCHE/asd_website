@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jury Reservation - All-Star Debate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jury-reservation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Footer will be loaded by components.js -->
+    
+    <main class="jury-reservation-main">
+        <section class="jury-reservation-section">
+            <div class="reservation-header">
+                <h1 data-en="Join Our Jury" data-fr="Rejoignez Notre Jury" data-ar="انضم إلى لجنتنا">Join Our Jury</h1>
+                <p data-en="Share your expertise and help shape the future of debate" 
+                   data-fr="Partagez votre expertise et aidez à façonner l'avenir du débat"
+                   data-ar="شارك خبرتك وساعد في تشكيل مستقبل المناظرة">
+                    Share your expertise and help shape the future of debate
+                </p>
+            </div>
+            
+            <form id="juryReservationForm" class="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name" data-en="Full Name" data-fr="Nom Complet" data-ar="الاسم الكامل">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-fr="Email" data-ar="البريد الإلكتروني">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone Number" data-fr="Numéro de Téléphone" data-ar="رقم الهاتف">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="section" data-en="Preferred Section" data-fr="Section Préférée" data-ar="القسم المفضل">Preferred Section</label>
+                        <select id="section" name="section" required>
+                            <option value="">Select a section</option>
+                            <option value="english" data-en="English Section" data-fr="Section Anglaise" data-ar="القسم الإنجليزي">English Section</option>
+                            <option value="french" data-en="French Section" data-fr="Section Française" data-ar="القسم الفرنسي">French Section</option>
+                            <option value="arabic" data-en="Arabic Section" data-fr="Section Arabe" data-ar="القسم العربي">Arabic Section</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience" data-en="Years of Experience" data-fr="Années d'Expérience" data-ar="سنوات الخبرة">Years of Experience</label>
+                        <input type="number" id="experience" name="experience" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="juryPhoto" data-en="Your Photo" data-fr="Votre Photo" data-ar="صورتك">Your Photo</label>
+                        <input type="file" id="juryPhoto" name="juryPhoto" accept="image/*">
+                        <div class="photo-preview" id="juryPhotoPreview"></div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message" data-en="Additional Information" data-fr="Informations Supplémentaires" data-ar="معلومات إضافية">Additional Information</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn" data-en="Submit Application" data-fr="Soumettre la Candidature" data-ar="تقديم الطلب">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jury-reservation.js"></script>
+</body>
+</html> 

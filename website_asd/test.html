@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - All-Star Debate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: var(--card-background);
+            border-radius: 8px;
+        }
+        
+        .test-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 4px;
+        }
+        
+        .test-section h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .test-image {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border: 1px solid #444;
+        }
+        
+        .status {
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status.success {
+            background-color: rgba(0, 255, 0, 0.2);
+            border: 1px solid green;
+        }
+        
+        .status.error {
+            background-color: rgba(255, 0, 0, 0.2);
+            border: 1px solid red;
+        }
+        
+        #log {
+            background: #000;
+            color: #0f0;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            height: 200px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Footer will be loaded by components.js -->
+    
+    <main class="test-container">
+        <h1>All-Star Debate Website Test</h1>
+        <p>This page tests various components and assets of the website.</p>
+        
+        <div class="test-section">
+            <h2>1. Component Loading Test</h2>
+            <div id="headerTest" class="status">Testing header loading...</div>
+            <div id="footerTest" class="status">Testing footer loading...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>2. Asset Loading Test</h2>
+            <div>
+                <h3>Logo Image:</h3>
+                <img src="assets/images/logo.svg" alt="Logo" class="test-image" id="logoImage">
+                <div id="logoTest" class="status">Testing logo loading...</div>
+            </div>
+            
+            <div>
+                <h3>Hero Image:</h3>
+                <img src="assets/images/hero1.svg" alt="Hero" class="test-image" id="heroImage">
+                <div id="heroTest" class="status">Testing hero image loading...</div>
+            </div>
+            
+            <div>
+                <h3>Placeholder Image:</h3>
+                <img src="assets/images/debaters/placeholder.svg" alt="Placeholder" class="test-image" id="placeholderImage">
+                <div id="placeholderTest" class="status">Testing placeholder image loading...</div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>3. Data Loading Test</h2>
+            <div id="dataTest" class="status">Testing data loading...</div>
+            <button id="testDataBtn">Test Data Loading</button>
+        </div>
+        
+        <div class="test-section">
+            <h2>4. Console Log</h2>
+            <div id="log"></div>
+        </div>
+    </main>
+
+    <script>
+        // Helper function to log to the page
+        function log(message, type = 'info') {
+            const logElement = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logElement.appendChild(entry);
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(message);
+        }
+        
+        // Helper function to update status
+        function updateStatus(id, message, success) {
+            const element = document.getElementById(id);
+            element.textContent = message;
+            element.className = `status ${success ? 'success' : 'error'}`;
+        }
+        
+        // Test image loading
+        function testImageLoading(imageId, testId, description) {
+            const img = document.getElementById(imageId);
+            img.onload = () => {
+                updateStatus(testId, `✅ ${description} loaded successfully`, true);
+                log(`${description} loaded successfully`);
+            };
+            img.onerror = () => {
+                updateStatus(testId, `❌ Failed to load ${description}`, false);
+                log(`Failed to load ${description}`, 'error');
+            };
+        }
+        
+        // Test component loading
+        function testComponentLoading() {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    // Check if header loaded
+                    const header = document.querySelector('.main-header');
+                    if (header) {
+                        updateStatus('headerTest', '✅ Header component loaded successfully', true);
+                        log('Header component loaded successfully');
+                    } else {
+                        updateStatus('headerTest', '❌ Failed to load header component', false);
+                        log('Failed to load header component', 'error');
+                    }
+                    
+                    // Check if footer loaded
+                    const footer = document.querySelector('.main-footer');
+                    if (footer) {
+                        updateStatus('footerTest', '✅ Footer component loaded successfully', true);
+                        log('Footer component loaded successfully');
+                    } else {
+                        updateStatus('footerTest', '❌ Failed to load footer component', false);
+                        log('Failed to load footer component', 'error');
+                    }
+                }, 1000); // Give components time to load
+            });
+        }
+        
+        // Test data loading
+        function testDataLoading() {
+            const btn = document.getElementById('testDataBtn');
+            btn.addEventListener('click', async () => {
+                log('Testing data loading...');
+                try {
+                    const response = await fetch('data/website.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    updateStatus('dataTest', '✅ Data loaded successfully', true);
+                    log('Data loaded successfully: ' + JSON.stringify(data.siteInfo));
+                } catch (error) {
+                    updateStatus('dataTest', '❌ Failed to load data: ' + error.message, false);
+                    log('Failed to load data: ' + error.message, 'error');
+                }
+            });
+        }
+        
+        // Run all tests
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Starting tests...');
+            testImageLoading('logoImage', 'logoTest', 'Logo image');
+            testImageLoading('heroImage', 'heroTest', 'Hero image');
+            testImageLoading('placeholderImage', 'placeholderTest', 'Placeholder image');
+            testComponentLoading();
+            testDataLoading();
+            
+            // Log browser information
+            log(`Browser: ${navigator.userAgent}`);
+            log(`Window size: ${window.innerWidth}x${window.innerHeight}`);
+        });
+        
+        // Global error handler
+        window.addEventListener('error', function(e) {
+            log(`ERROR: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+        });
+    </script>
+    
+    <script src="js/components.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

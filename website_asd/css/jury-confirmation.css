@@ -1,0 +1,122 @@
+.jury-confirmation-main {
+    padding: 2rem;
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, var(--background-color) 0%, #2a2a2a 100%);
+}
+
+.jury-confirmation-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.confirmation-header i {
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.confirmation-header h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.confirmation-header p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.confirmation-details {
+    margin-bottom: 3rem;
+}
+
+.confirmation-details h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.detail-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.detail-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.detail-label {
+    display: block;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.detail-value {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.confirmation-actions {
+    text-align: center;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-btn:hover {
+    background-color: #ffd900;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .jury-confirmation-section {
+        padding: 2rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .confirmation-header h1 {
+        font-size: 2rem;
+    }
+
+    .confirmation-header p {
+        font-size: 1rem;
+    }
+} 

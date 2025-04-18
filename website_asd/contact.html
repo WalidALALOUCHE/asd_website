@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - All-Star Debate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body class="gold-theme">
+    <!-- Header will be inserted via JavaScript -->
+    
+    <main class="contact-main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title" data-lang-key="contact_title">Contact Us</h1>
+                <p class="page-subtitle" data-lang-key="contact_subtitle">Have questions? We're here to help!</p>
+            </div>
+        </section>
+        
+        <!-- Contact Content -->
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2 data-lang-key="contact_form_title">Send Us a Message</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-lang-key="contact_name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <p id="nameError" class="error-message" data-lang-key="contact_name_error">Please enter your name</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-lang-key="contact_email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <p id="emailError" class="error-message" data-lang-key="contact_email_error">Please enter a valid email</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" data-lang-key="contact_subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                                <p id="subjectError" class="error-message" data-lang-key="contact_subject_error">Please enter a subject</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-lang-key="contact_message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <p id="messageError" class="error-message" data-lang-key="contact_message_error">Please enter your message</p>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary gold-btn" data-lang-key="contact_submit">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <h2 data-lang-key="contact_info_title">Contact Information</h2>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4 data-lang-key="contact_address_title">Address</h4>
+                                    <p data-lang-key="contact_address">123 Avenue des Champs-Élysées, 75008 Paris, France</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4 data-lang-key="contact_phone_title">Phone</h4>
+                                    <p>+33 (0) 1 23 45 67 89</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4 data-lang-key="contact_email_title">Email</h4>
+                                    <p>info@allstardebate.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="info-text">
+                                    <h4 data-lang-key="contact_hours_title">Business Hours</h4>
+                                    <p data-lang-key="contact_hours">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h4 data-lang-key="contact_social_title">Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map Section -->
+        <section class="map-section">
+            <div id="googleMap" class="google-map"></div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="faq_title">Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-lang-key="faq_q1">How can I participate in the All-Star Debate?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-lang-key="faq_a1">To participate as a debater, you need to apply through our Debaters page. Fill out the application form with your details and experience. If you want to be part of the jury, you can make a reservation through our Jury Reservation page.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-lang-key="faq_q2">What are the requirements to be a debater?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-lang-key="faq_a2">Debaters should have previous experience in formal debates or public speaking. They should be able to articulate ideas clearly, research topics thoroughly, and respond to arguments constructively. Proficiency in English is required, and knowledge of French is beneficial but not mandatory.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-lang-key="faq_q3">How can I purchase tickets for the debate events?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-lang-key="faq_a3">Tickets for our debate events can be purchased through our Reservation page. Simply select the event you wish to attend, choose your preferred seating, and complete the checkout process. Early bookings often qualify for discounted rates.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-lang-key="faq_q4">Are there opportunities for sponsorship?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-lang-key="faq_a4">Yes, we offer various sponsorship packages for companies and organizations interested in supporting our debates. Sponsorship provides visibility to a highly engaged audience and demonstrates your commitment to intellectual discourse. Please contact our sponsorship team at sponsors@allstardebate.com for details.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-lang-key="faq_q5">Can I suggest topics for future debates?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-lang-key="faq_a5">Absolutely! We welcome topic suggestions from our community. You can submit your ideas through the contact form on this page. Our committee reviews all suggestions and selects topics based on relevance, potential for meaningful discourse, and audience interest.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer will be inserted via JavaScript -->
+    
+    <!-- Success Modal -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="successModal" class="success-modal">
+            <div class="modal-header">
+                <h3 data-lang-key="contact_success_title">Message Sent!</h3>
+                <button id="closeModal" class="close-button"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <p data-lang-key="contact_success_message">Thank you for your message. We'll get back to you as soon as possible.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="okButton" class="btn-primary gold-btn" data-lang-key="contact_success_ok">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/components.js" type="module"></script>
+    <script src="js/contact.js" type="module"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>
+</body>
+</html> 

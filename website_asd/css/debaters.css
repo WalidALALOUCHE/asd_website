@@ -1,0 +1,270 @@
+.debaters-main {
+    padding: 2rem;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+.debaters-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.debaters-hero h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.debaters-hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.edition-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.edition-btn {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edition-btn.active {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.edition-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.debaters-section {
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.debaters-section h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.debaters-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.debaters-grid {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.team-title {
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.team-title h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.team-title h3:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+.team-spacer {
+    min-width: 100px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.debater-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 300px;
+    flex: 0 0 auto;
+}
+
+.debater-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.debater-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+}
+
+.debater-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.debater-card:hover .debater-image img {
+    transform: scale(1.05);
+}
+
+.debater-info {
+    padding: 1.5rem;
+}
+
+.debater-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.debater-role {
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.debater-affiliation {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.debater-bio {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.debater-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.achievement {
+    background-color: rgba(255, 215, 0, 0.1);
+    color: var(--secondary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.error-message h3 {
+    color: #ff0000;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .debaters-hero h1 {
+        font-size: 2rem;
+    }
+
+    .debaters-hero p {
+        font-size: 1rem;
+    }
+
+    .debaters-section {
+        padding: 1rem;
+    }
+
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
+    }
+} 

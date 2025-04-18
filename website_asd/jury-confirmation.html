@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jury Confirmation - All-Star Debate</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jury-confirmation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Footer will be loaded by components.js -->
+    
+    <main class="jury-confirmation-main">
+        <section class="jury-confirmation-section">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h1 data-en="Application Received" data-fr="Candidature Reçue" data-ar="تم استلام الطلب">Application Received</h1>
+                <p data-en="Thank you for your interest in joining our jury. We'll review your application and get back to you soon."
+                   data-fr="Merci de votre intérêt pour rejoindre notre jury. Nous examinerons votre candidature et vous répondrons bientôt."
+                   data-ar="شكراً لاهتمامك بالانضمام إلى لجنتنا. سنراجع طلبك وسنعود إليك قريباً">
+                    Thank you for your interest in joining our jury. We'll review your application and get back to you soon.
+                </p>
+            </div>
+            
+            <div class="confirmation-details">
+                <h2 data-en="Application Details" data-fr="Détails de la Candidature" data-ar="تفاصيل الطلب">Application Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label" data-en="Name" data-fr="Nom" data-ar="الاسم">Name</span>
+                        <span class="detail-value" id="confirmation-name"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label" data-en="Email" data-fr="Email" data-ar="البريد الإلكتروني">Email</span>
+                        <span class="detail-value" id="confirmation-email"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label" data-en="Phone" data-fr="Téléphone" data-ar="الهاتف">Phone</span>
+                        <span class="detail-value" id="confirmation-phone"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label" data-en="Section" data-fr="Section" data-ar="القسم">Section</span>
+                        <span class="detail-value" id="confirmation-section"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label" data-en="Experience" data-fr="Expérience" data-ar="الخبرة">Experience</span>
+                        <span class="detail-value" id="confirmation-experience"></span>
+                    </div>
+                    <div class="detail-item full-width">
+                        <span class="detail-label" data-en="Additional Information" data-fr="Informations Supplémentaires" data-ar="معلومات إضافية">Additional Information</span>
+                        <span class="detail-value" id="confirmation-message"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="confirmation-actions">
+                <a href="index.html" class="home-btn" data-en="Return to Home" data-fr="Retour à l'Accueil" data-ar="العودة إلى الصفحة الرئيسية">
+                    Return to Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jury-confirmation.js"></script>
+</body>
+</html> 

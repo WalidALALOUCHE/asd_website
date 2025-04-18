@@ -1,0 +1,416 @@
+{
+    "siteInfo": {
+        "name": "All-Star Debate",
+        "edition": "3rd Edition",
+        "tagline": {
+            "en": "Where Voices Rise, and Stars Shine",
+            "fr": "Où les Voix S'élèvent, et les Étoiles Brillent"
+        },
+        "stats": {
+            "editions": 2,
+            "debaters": 100,
+            "cities": 15,
+            "champions": 1
+        }
+    },
+    "about": {
+        "description": {
+            "en": "A national debate championship that brings together the best university talents. Beyond competition: a forum for exchange, excellence, and national youth dialogue.",
+            "fr": "Un championnat national de débat qui réunit les meilleurs talents universitaires. Au-delà de la compétition : un forum d'échange, d'excellence et de dialogue national des jeunes."
+        },
+        "mission": {
+            "en": "Empower Youth Voice, Promote Critical Thinking, Elevate Debate Culture Nationally",
+            "fr": "Donner du pouvoir à la voix des jeunes, Promouvoir la pensée critique, Élever la culture du débat au niveau national"
+        }
+    },
+    "program": {
+        "days": [
+            {
+                "day": 1,
+                "title": {
+                    "en": "Arrival & Opening Ceremony",
+                    "fr": "Arrivée & Cérémonie d'Ouverture"
+                },
+                "events": [
+                    {
+                        "time": "09:00",
+                        "title": {
+                            "en": "Registration",
+                            "fr": "Inscription"
+                        },
+                        "description": {
+                            "en": "Welcome and registration of participants",
+                            "fr": "Accueil et inscription des participants"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "team": {
+        "board": [
+            {
+                "name": "Walid Alalouche",
+                "role": {
+                    "en": "Co-founder",
+                    "fr": "Co-fondateur"
+                },
+                "bio": {
+                    "en": "Visionary leader dedicated to empowering youth through debate and public speaking.",
+                    "fr": "Leader visionnaire dédié à l'autonomisation des jeunes par le débat et l'art oratoire."
+                },
+                "image": "images/team/cofounder1.svg"
+            },
+            {
+                "name": "Marouane Benkerroum",
+                "role": {
+                    "en": "Co-founder",
+                    "fr": "Co-fondateur"
+                },
+                "bio": {
+                    "en": "Committed to fostering critical thinking and elevating debate culture across Morocco.",
+                    "fr": "Engagé à favoriser la pensée critique et à élever la culture du débat à travers le Maroc."
+                },
+                "image": "images/team/cofounder2.svg"
+            }
+        ],
+        "departments": [
+            {
+                "name": {
+                    "en": "Logistics",
+                    "fr": "Logistique"
+                },
+                "head": {
+                    "name": "Department Head 1",
+                    "image": "images/team/dept1.jpg"
+                }
+            }
+        ]
+    },
+    "partners": {
+        "sponsors": [
+            {
+                "name": "Sponsor 1",
+                "logo": "images/partners/sponsor1.png",
+                "level": "Gold",
+                "testimonial": {
+                    "en": "Testimonial text...",
+                    "fr": "Texte du témoignage..."
+                }
+            }
+        ]
+    },
+    "media": {
+        "videos": [
+            {
+                "title": {
+                    "en": "All-Star Debate - 2nd Edition",
+                    "fr": "All-Star Debate - 2ème Édition"
+                },
+                "url": "https://youtu.be/cM3mjzXtsIc?si=b2gytEZtNbS13m9t",
+                "thumbnail": "assets/images/editions/edition2.svg"
+            },
+            {
+                "title": {
+                    "en": "All-Star Debate - 1st Edition",
+                    "fr": "All-Star Debate - 1ère Édition"
+                },
+                "url": "https://youtu.be/KmjhMNYyt5M?si=zX-ClnYXhlkdphTg",
+                "thumbnail": "assets/images/editions/edition1.svg"
+            }
+        ],
+        "gallery": {
+            "2024": [
+                {
+                    "image": "images/gallery/2024/1.jpg",
+                    "caption": {
+                        "en": "Caption...",
+                        "fr": "Légende..."
+                    }
+                }
+            ]
+        }
+    },
+    "community": {
+        "title": {
+            "en": "Qualifying Competitions",
+            "fr": "Compétitions Qualificatives"
+        },
+        "description": {
+            "en": "Our debaters are selected from the best talents across Morocco's prestigious debate competitions.",
+            "fr": "Nos débatteurs sont sélectionnés parmi les meilleurs talents issus des compétitions de débat prestigieuses du Maroc."
+        },
+        "benefits": [
+            {
+                "title": {
+                    "en": "March 2025",
+                    "fr": "Mars 2025"
+                },
+                "description": {
+                    "en": "WarofWords AUI by DebateClub (7-9 March) • INVICTUS by TGD ENCG FES (15-16 March) • Grand Débat d'Oujda by TGD ENCG OUJDA (22 March)",
+                    "fr": "WarofWords AUI by DebateClub (7-9 Mars) • INVICTUS by TGD ENCG FES (15-16 Mars) • Grand Débat d'Oujda by TGD ENCG OUJDA (22 Mars)"
+                }
+            },
+            {
+                "title": {
+                    "en": "April 2025",
+                    "fr": "Avril 2025"
+                },
+                "description": {
+                    "en": "Grand Debat by CMD ENCG SETTAT (5-6 April) • Dukala Debate Congress TGD ENSA EL Jadida (12 April) • Victoria Verba ENSAM EXPRESS (13 April) • UDN TGD ENCG KENITRA (19-20 April) • ORATIO GD ISCAE CASABLANCA (26-27 April)",
+                    "fr": "Grand Debat by CMD ENCG SETTAT (5-6 Avril) • Dukala Debate Congress TGD ENSA EL Jadida (12 Avril) • Victoria Verba ENSAM EXPRESS (13 Avril) • UDN TGD ENCG KENITRA (19-20 Avril) • ORATIO GD ISCAE CASABLANCA (26-27 Avril)"
+                }
+            },
+            {
+                "title": {
+                    "en": "May-June 2025",
+                    "fr": "Mai-Juin 2025"
+                },
+                "description": {
+                    "en": "Olympia AGORA ENCG CASABLANCA (3-4 May) • Clash of Minds TGD ENSA KENITRA (7-11 May) • Symposium TGD EMI (18 May) • La Valse des Esprits Éclairés TGD EHTP (24-25 May) • AGON TGD ENCG TANGER (June)",
+                    "fr": "Olympia AGORA ENCG CASABLANCA (3-4 Mai) • Clash of Minds TGD ENSA KENITRA (7-11 Mai) • Symposium TGD EMI (18 Mai) • La Valse des Esprits Éclairés TGD EHTP (24-25 Mai) • AGON TGD ENCG TANGER (Juin)"
+                }
+            }
+        ]
+    },
+    "debaters": {
+        "2023": {
+            "french": {
+                "government": [
+                    {
+                        "name": "Amine EL FERGUI",
+                        "affiliation": "CMD ENCGS",
+                        "role": {
+                            "en": "1st Speaker",
+                            "fr": "1er Orateur"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    },
+                    {
+                        "name": "Inas HOUEM",
+                        "affiliation": "TGD ENCGT",
+                        "role": {
+                            "en": "2nd Speaker",
+                            "fr": "2eme Oratrice"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    },
+                    {
+                        "name": "Ounaissa ABBOUB",
+                        "affiliation": "Speak To Lead UM5",
+                        "role": {
+                            "en": "3rd Speaker",
+                            "fr": "3eme Oratrice"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    }
+                ],
+                "opposition": [
+                    {
+                        "name": "Maryam Frih",
+                        "affiliation": "TGD ENCGT",
+                        "role": {
+                            "en": "1st Speaker",
+                            "fr": "1ere oratrice"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    },
+                    {
+                        "name": "Kaled Abodji Kondi",
+                        "affiliation": "TGD ENSAF",
+                        "role": {
+                            "en": "2nd Speaker",
+                            "fr": "2eme orateur"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    },
+                    {
+                        "name": "Ariel SAKAJI",
+                        "affiliation": "CMD ENCGS",
+                        "role": {
+                            "en": "3rd Speaker",
+                            "fr": "3eme Orateur"
+                        },
+                        "image": "assets/images/debaters/placeholder.svg"
+                    }
+                ]
+            }
+        }
+    },
+    "contact": {
+        "title": {
+            "en": "Contact Us",
+            "fr": "Contactez-Nous"
+        },
+        "subtitle": {
+            "en": "Get in touch with the All-Star Debate team",
+            "fr": "Entrez en contact avec l'équipe All-Star Debate"
+        },
+        "form": {
+            "title": {
+                "en": "Send Us a Message",
+                "fr": "Envoyez-Nous un Message"
+            },
+            "description": {
+                "en": "Have questions about our events or want to get involved? Fill out the form below and we'll get back to you.",
+                "fr": "Vous avez des questions sur nos événements ou vous souhaitez vous impliquer ? Remplissez le formulaire ci-dessous et nous vous répondrons."
+            },
+            "fields": {
+                "name": {
+                    "en": "Full Name",
+                    "fr": "Nom Complet"
+                },
+                "email": {
+                    "en": "Email Address",
+                    "fr": "Adresse Email"
+                },
+                "phone": {
+                    "en": "Phone Number",
+                    "fr": "Numéro de Téléphone"
+                },
+                "subject": {
+                    "en": "Subject",
+                    "fr": "Sujet"
+                },
+                "message": {
+                    "en": "Your Message",
+                    "fr": "Votre Message"
+                },
+                "submit": {
+                    "en": "Send Message",
+                    "fr": "Envoyer le Message"
+                }
+            },
+            "subjects": [
+                {
+                    "value": "general",
+                    "en": "General Inquiry",
+                    "fr": "Renseignement Général"
+                },
+                {
+                    "value": "reservation",
+                    "en": "Reservation Question",
+                    "fr": "Question de Réservation"
+                },
+                {
+                    "value": "participation",
+                    "en": "Participation Interest",
+                    "fr": "Intérêt de Participation"
+                },
+                {
+                    "value": "sponsorship",
+                    "en": "Sponsorship Opportunity",
+                    "fr": "Opportunité de Parrainage"
+                },
+                {
+                    "value": "feedback",
+                    "en": "Feedback",
+                    "fr": "Commentaires"
+                }
+            ]
+        },
+        "info": {
+            "title": {
+                "en": "Contact Information",
+                "fr": "Informations de Contact"
+            },
+            "description": {
+                "en": "You can also reach us through the following channels:",
+                "fr": "Vous pouvez également nous joindre par les canaux suivants :"
+            },
+            "address": {
+                "label": {
+                    "en": "Address",
+                    "fr": "Adresse"
+                },
+                "value": "123 Debate Street, City, Country"
+            },
+            "phone": {
+                "label": {
+                    "en": "Phone",
+                    "fr": "Téléphone"
+                },
+                "value": "+1 (555) 123-4567"
+            },
+            "email": {
+                "label": {
+                    "en": "Email",
+                    "fr": "Email"
+                },
+                "value": "info@allstardebate.com"
+            },
+            "hours": {
+                "label": {
+                    "en": "Office Hours",
+                    "fr": "Heures de Bureau"
+                },
+                "value": {
+                    "en": "Monday - Friday: 9am - 5pm<br>Saturday: 10am - 2pm",
+                    "fr": "Lundi - Vendredi: 9h - 17h<br>Samedi: 10h - 14h"
+                }
+            }
+        },
+        "faq": {
+            "title": {
+                "en": "Frequently Asked Questions",
+                "fr": "Questions Fréquemment Posées"
+            },
+            "items": [
+                {
+                    "question": {
+                        "en": "How can I participate in the All-Star Debate competition?",
+                        "fr": "Comment puis-je participer à la compétition All-Star Debate ?"
+                    },
+                    "answer": {
+                        "en": "To participate, you need to register through our website during the registration period. Check our 'Debaters' page for more information about eligibility and the selection process.",
+                        "fr": "Pour participer, vous devez vous inscrire via notre site Web pendant la période d'inscription. Consultez notre page 'Débatteurs' pour plus d'informations sur l'éligibilité et le processus de sélection."
+                    }
+                },
+                {
+                    "question": {
+                        "en": "How can I become a jury member?",
+                        "fr": "Comment puis-je devenir membre du jury ?"
+                    },
+                    "answer": {
+                        "en": "We select jury members based on their expertise and experience. If you're interested, please visit our 'Jury' page and fill out the application form.",
+                        "fr": "Nous sélectionnons les membres du jury en fonction de leur expertise et de leur expérience. Si vous êtes intéressé, veuillez visiter notre page 'Jury' et remplir le formulaire de candidature."
+                    }
+                },
+                {
+                    "question": {
+                        "en": "Where are your events usually held?",
+                        "fr": "Où se déroulent généralement vos événements ?"
+                    },
+                    "answer": {
+                        "en": "Our events are held at various prestigious venues throughout the country. The specific location for each event is announced on our website and social media channels.",
+                        "fr": "Nos événements se déroulent dans divers lieux prestigieux à travers le pays. L'emplacement spécifique de chaque événement est annoncé sur notre site Web et nos réseaux sociaux."
+                    }
+                },
+                {
+                    "question": {
+                        "en": "Can I sponsor an All-Star Debate event?",
+                        "fr": "Puis-je parrainer un événement All-Star Debate ?"
+                    },
+                    "answer": {
+                        "en": "Yes, we welcome sponsorships! Please contact us through the form on this page or email us at sponsors@allstardebate.com for more information about sponsorship opportunities.",
+                        "fr": "Oui, nous accueillons volontiers les parrainages ! Veuillez nous contacter via le formulaire sur cette page ou nous envoyer un email à sponsors@allstardebate.com pour plus d'informations sur les opportunités de parrainage."
+                    }
+                }
+            ]
+        },
+        "success": {
+            "title": {
+                "en": "Message Sent!",
+                "fr": "Message Envoyé !"
+            },
+            "message": {
+                "en": "Thank you for contacting us. We'll get back to you as soon as possible.",
+                "fr": "Merci de nous avoir contactés. Nous vous répondrons dès que possible."
+            },
+            "button": {
+                "en": "OK",
+                "fr": "OK"
+            }
+        }
+    }
+} 
