@@ -1,2 +1,2 @@
 # asd_website
-the All-Star Debate official website
+the All-Star Debate unofficial website
